@@ -23,7 +23,6 @@ ParameterData = DataFactory('parameter')
 KpointsData = DataFactory('array.kpoints')
 StructureData = DataFactory('structure')
 BandsData = DataFactory('array.bands')
-YamboCalc = CalculationFactory('yambo')
 PwCalculation = CalculationFactory('quantumespresso.pw')
 logger = aiidalogger.getChild('SsspWorkflow')
 

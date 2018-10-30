@@ -3,7 +3,7 @@ import os, numpy
 from aiida.orm.workflow import Workflow
 from aiida.orm import DataFactory, CalculationFactory, Code, Group, \
                        load_node, load_workflow
-from aiida.workflows.user.epfl_theos.quantumespresso import helpers
+from sssp_tools import helpers
 from aiida.common.datastructures import calc_states
 from aiida.common.example_helpers import test_and_get_code
 from aiida.orm.calculation.inline import make_inline,optional_inline
