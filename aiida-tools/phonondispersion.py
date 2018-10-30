@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from aiida.orm.workflow import Workflow
 from aiida.orm import CalculationFactory, Code, DataFactory, Group, load_workflow
-from aiida.workflows.user.epfl_theos.quantumespresso.pw import PwWorkflow
-from aiida.workflows.user.epfl_theos.quantumespresso import helpers
-from aiida.workflows.user.epfl_theos.quantumespresso.ph import PhWorkflow
+from sssp-protocol.aiida-tools.quantumespresso.pw import PwWorkflow
+from sssp-protocol.aiida-tools.quantumespresso import helpers
+from sssp-protocol.aiida-tools.quantumespresso.ph import PhWorkflow
 from aiida.common.example_helpers import test_and_get_code
 from aiida.orm.data.array.kpoints import _default_epsilon_length,_default_epsilon_angle
 from datetime import datetime

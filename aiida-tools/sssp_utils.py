@@ -4,12 +4,9 @@ from aiida.orm.calculation.inline import make_inline,optional_inline
 from aiida.orm import DataFactory,Node,CalculationFactory
 from aiida.backends.djsite.db import models
 import numpy as np
-from aiida.workflows.user.epfl_theos.dbimporters.utils import objects_set,objects_are_equal
 
 
-__copyright__ = u"Copyright (c), This file is part of the AiiDA-EPFL Pro platform. For further information please visit http://www.aiida.net/. All rights reserved"
-__license__ = "Non-Commercial, End-User Software License Agreement, see LICENSE.txt file."
-__version__ = "0.1.0"
+__version__ = "1.0"
 __authors__ = "Nicolas Mounet, Gianluca Prandini, Antimo Marrazzo"
 
 
