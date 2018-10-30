@@ -4,20 +4,18 @@ from aiida.common import aiidalogger
 from aiida.orm.workflow import Workflow
 from aiida.orm.utils import load_node, load_workflow
 from aiida.orm import  Group, CalculationFactory, DataFactory
-from aiida.workflows.user.epfl_theos.quantumespresso.pw import PwWorkflow
-from aiida.workflows.user.epfl_theos.quantumespresso.phonondispersion import PhonondispersionWorkflow
-from aiida.workflows.user.epfl_theos.quantumespresso.helpers import get_pw_wfs_with_parameters, get_phonondispersion_wfs_with_parameters
+from sssp-protocol.aiida-tools.quantumespresso.pw import PwWorkflow
+from sssp-protocol.aiida-tools.quantumespresso.phonondispersion import PhonondispersionWorkflow
+from sssp-protocol.aiida-tools.quantumespresso.helpers import get_pw_wfs_with_parameters, get_phonondispersion_wfs_with_parameters
 from aiida.common.exceptions import NotExistent
 from aiida.orm.data.singlefile import SinglefileData
-from aiida.workflows.user.epfl_theos.quantumespresso import sssp_utils
-from aiida.workflows.user.epfl_theos.dbimporters.utils import objects_are_equal
+from sssp-protocol.aiida-tools import sssp_utils
+from sssp-protocol.aiida-tools.sssp_utils import objects_are_equal
 # from aiida.backends.djsite.db import models
 
 
-__copyright__ = u"Copyright (c), This file is part of the AiiDA-EPFL Pro platform. For further information please visit http://www.aiida.net/. All rights reserved"
-__license__ = "Non-Commercial, End-User Software License Agreement, see LICENSE.txt file."
-__version__ = "0.1.0"
-__authors__ = "Gianluca Prandini, Nicolas Mounet, Antimo Marrazzo"
+__version__ = "1.0"
+__authors__ = "Gianluca Prandini, Antimo Marrazzo, Nicolas Mounet"
 
 
 UpfData = DataFactory('upf')
