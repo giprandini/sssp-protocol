@@ -10,4 +10,5 @@ SSSP: G. Prandini, A. Marrazzo, I. E. Castelli, N. Mounet and N. Marzari, arXiv:
 WEB: http://materialscloud.org/sssp.
 
 K. Lejaeghere et al., Science 351 (6280), 1415 (2016). 
-DOI: 10.1126/science.aad300, WEB: http://molmod.ugent.be/deltacodesdft. An open-access copy is available from Cottenier's page.
+DOI: 10.1126/science.aad300
+WEB: http://molmod.ugent.be/deltacodesdft.
