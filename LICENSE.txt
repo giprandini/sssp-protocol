@@ -1,0 +1,63 @@
+The data provided in this entry/package is given under the MIT license,
+except for some of the files for which license details are given below.
+
+MIT License
+
+Copyright (c) 2018, ECOLE POLYTECHNIQUE FEDERALE DE LAUSANNE
+(Theory and Simulation of Materials (THEOS) and National Centre for 
+Computational Design and Discovery of Novel Materials (NCCR MARVEL)).
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+========================================================================================================================
+calcDelta v3.1:
+
+LICENSE:    GNU General Public License. https://www.gnu.org/licenses/
+
+REFERENCE:  K. Lejaeghere et al., Science 351 (6280), 1415 (2016).
+DOI:        10.1126/science.aad300
+WEB:        http://molmod.ugent.be/deltacodesdft
+
+**************************************************************************************************************
+# Copyright (C) 2012 Kurt Lejaeghere <Kurt.Lejaeghere@UGent.be>, Center for
+# Molecular Modeling (CMM), Ghent University, Ghent, Belgium
+#
+# calcDelta.py is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by the
+# Free Software Foundation; either version 2.1 of the License, or (at your
+# option) any later version.
+#
+# In addition to the regulations of the GNU Lesser General Public License,
+# publications and communications based in parts on this program or on
+# parts of this program are required to cite the following articles:
+#
+# K. Lejaeghere, V. Van Speybroeck, G. Van Oost, and S. Cottenier, "Error
+# estimates for solid-state density-functional theory predictions: an overview
+# by means of the ground-state elemental crystals", Crit. Rev. Solid State 39,
+# 1-24 (2014).
+#
+# calcDelta.py is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License
+# for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with calcDelta.py; if not, see <http://www.gnu.org/licenses/>.
