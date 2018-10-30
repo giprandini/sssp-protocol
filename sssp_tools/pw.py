@@ -3,7 +3,7 @@ from aiida.orm.workflow import Workflow
 from aiida.orm import DataFactory, Node, Code, CalculationFactory, Group, Computer
 from aiida.common.datastructures import calc_states
 from aiida.common.example_helpers import test_and_get_code
-from sssp-protocol.aiida-tools.quantumespresso import helpers
+from sssp_tools import helpers
 from aiida.common.exceptions import AiidaException,ValidationError,InternalError,NotExistent
 from aiida.orm.data.array.kpoints import _default_epsilon_length,_default_epsilon_angle
 from aiida.orm.calculation.inline import make_inline,optional_inline

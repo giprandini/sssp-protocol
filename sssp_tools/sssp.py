@@ -4,13 +4,13 @@ from aiida.common import aiidalogger
 from aiida.orm.workflow import Workflow
 from aiida.orm.utils import load_node, load_workflow
 from aiida.orm import  Group, CalculationFactory, DataFactory
-from sssp-protocol.aiida-tools.quantumespresso.pw import PwWorkflow
-from sssp-protocol.aiida-tools.quantumespresso.phonondispersion import PhonondispersionWorkflow
-from sssp-protocol.aiida-tools.quantumespresso.helpers import get_pw_wfs_with_parameters, get_phonondispersion_wfs_with_parameters
+from sssp_tools.pw import PwWorkflow
+from sssp_tools.phonondispersion import PhonondispersionWorkflow
+from sssp_tools.helpers import get_pw_wfs_with_parameters, get_phonondispersion_wfs_with_parameters
 from aiida.common.exceptions import NotExistent
 from aiida.orm.data.singlefile import SinglefileData
-from sssp-protocol.aiida-tools import sssp_utils
-from sssp-protocol.aiida-tools.sssp_utils import objects_are_equal
+from sssp_tools import sssp_utils
+from sssp_tools.sssp_utils import objects_are_equal
 # from aiida.backends.djsite.db import models
 
 
