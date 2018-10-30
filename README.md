@@ -3,7 +3,8 @@ This repository contains all the necessary workflows and tools in order to run t
 
 #### How to use
 %The folder `/aiida-tools` folder should be place in `aiida/workflows/user/`
-Compile the Fortran77 subroutin for the Fermi energy with efermi_f2py_make.sh through f2py
+
+Compile the Fortran77 subroutine for the Fermi energy with efermi_f2py_make.sh through f2py
 
 #### Acknowledgements
 
