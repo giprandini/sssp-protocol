@@ -507,7 +507,23 @@ for element in elements:
                         freqs_ph_rel = [2.*math.sqrt(sum(abs((ph-ref_ph)/ref_ph)**2)/len(ref_ph))*100.0 + count*offset 
                                     for ph in freqs_ph_tot ]
                         max_diff_ph_rel = [2.*max(abs((ph-ref_ph)/ref_ph))*100. + count*offset for ph in freqs_ph_tot ]
-                                                        
+                        
+                # DEBUG 
+                for p in infos_for_pseudo_and_dual:
+                    try:
+                        #print p.get_dict()['wfc_cutoff'], 'tot_num_freq =', len(p.get_dict()['phonon_frequencies']), \
+                        #      'Freqs =', p.get_dict()['phonon_frequencies'][0:18]#, ' max_freq =', \
+                        #      p.get_dict()['phonon_frequencies'][-1], ' cohesive =', p.get_dict()['cohesive_energy']  
+                         #print 'Bulk k-grid :' , p.inp.output_parameters.get_inputs_dict()['parameters_energy_bulk'].inp.output_parameters.inp.kpoints.get_kpoints_mesh()[0]
+                         #print 'Bulk smearing :' , p.inp.output_parameters.get_inputs_dict()['parameters_energy_bulk'].inp.output_parameters.inp.parameters.get_dict()['SYSTEM']['degauss']
+                         #print 'Phonon k-grid :', p.inp.output_parameters.get_inputs_dict()['parameters_phonon_bulk'].inp.output_parameters.inp.parent_calc_folder.inp.remote_folder.inp.kpoints.get_kpoints_mesh()[0]   
+                         #print 'Phonon smearing :', p.inp.output_parameters.get_inputs_dict()['parameters_phonon_bulk'].inp.output_parameters.inp.parent_calc_folder.inp.remote_folder.inp.parameters.get_dict()['SYSTEM']['degauss']  
+                         #print 'Phonon k-grid :', p.inp.output_parameters.get_inputs_dict()['parameters_phonon_bulk'].inp.output_parameters.inp.parameters.get_dict()
+                        pass
+                    except (KeyError,AttributeError,TypeError):
+                        pass    
+                # DEBUG
+                                
                 try:
                     deltas.append(round(delta,3))
                     delta1s.append(round(Delta1,3))

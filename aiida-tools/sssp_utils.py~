@@ -4,12 +4,13 @@ from aiida.orm.calculation.inline import make_inline,optional_inline
 from aiida.orm import DataFactory,Node,CalculationFactory
 from aiida.backends.djsite.db import models
 import numpy as np
+<<<<<<< HEAD
 from aiida.workflows.user.epfl_theos.dbimporters.utils import objects_set, objects_are_equal
+=======
+>>>>>>> 39a60e686bed5e2d003c4a3efd539803f8ba7da1
 
 
-__copyright__ = u"Copyright (c), This file is part of the AiiDA-EPFL Pro platform. For further information please visit http://www.aiida.net/. All rights reserved"
-__license__ = "Non-Commercial, End-User Software License Agreement, see LICENSE.txt file."
-__version__ = "0.1.0"
+__version__ = "1.0"
 __authors__ = "Nicolas Mounet, Gianluca Prandini, Antimo Marrazzo"
 
 
@@ -1444,4 +1445,21 @@ def objects_are_equal(obj1,obj2,**kwargs):
             raise TypeError("Type of obj1 and obj2 not recognized")
 
 
+def objects_set(objects,**kwargs):
+    """
+    Return a set made of objects compared between them using the
+    'objects_are_equal' function
+    :param objects: an iterable containing any kind of objects that can
+        be compared using the 'objects_are_equal' function (list, dict, etc.)
+    :param kwargs: additional keyword arguments to be passed to the
+        'objects_are_equal' function (e.g. precision for floating point number)
+    :return: a set of non-equal objects
+    """
+    the_set = []
+    for obj in objects:
+        if len([o for o in the_set if objects_are_equal(obj,o,**kwargs)])==0:
+            the_set.append(obj)
+    
+    return the_set
+    
 
