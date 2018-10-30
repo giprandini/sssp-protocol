@@ -1444,21 +1444,4 @@ def objects_are_equal(obj1,obj2,**kwargs):
             raise TypeError("Type of obj1 and obj2 not recognized")
 
 
-def objects_set(objects,**kwargs):
-    """
-    Return a set made of objects compared between them using the
-    'objects_are_equal' function
-    :param objects: an iterable containing any kind of objects that can
-        be compared using the 'objects_are_equal' function (list, dict, etc.)
-    :param kwargs: additional keyword arguments to be passed to the
-        'objects_are_equal' function (e.g. precision for floating point number)
-    :return: a set of non-equal objects
-    """
-    the_set = []
-    for obj in objects:
-        if len([o for o in the_set if objects_are_equal(obj,o,**kwargs)])==0:
-            the_set.append(obj)
-    
-    return the_set
-    
 
