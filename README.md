@@ -3,7 +3,9 @@ This repository contains all the necessary workflows and tools in order to run t
 
 
 #### Acknowledgements
+
 If you use this software, please cite the following works:
+
 SSSP: G. Prandini, A. Marrazzo, I. E. Castelli, N. Mounet and N. Marzari, arXiv:1806.05609 [cond-mat.mtrl-sci] (2018). 
 WEB: http://materialscloud.org/sssp.
 
