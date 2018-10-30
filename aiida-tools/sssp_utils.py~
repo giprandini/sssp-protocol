@@ -4,6 +4,10 @@ from aiida.orm.calculation.inline import make_inline,optional_inline
 from aiida.orm import DataFactory,Node,CalculationFactory
 from aiida.backends.djsite.db import models
 import numpy as np
+<<<<<<< HEAD
+from aiida.workflows.user.epfl_theos.dbimporters.utils import objects_set, objects_are_equal
+=======
+>>>>>>> 39a60e686bed5e2d003c4a3efd539803f8ba7da1
 
 
 __version__ = "1.0"
