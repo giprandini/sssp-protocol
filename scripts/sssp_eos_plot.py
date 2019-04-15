@@ -1,4 +1,3 @@
-## !!! Check EOS, delta factor and magnetic moment of REN  !!!  
 import sys 
 from aiida.orm.user import User     
 from aiida.backends.djsite.db import models
@@ -8,31 +7,19 @@ from matplotlib import pylab as plt
 import numpy as np
 import matplotlib
 
-#matplotlib.rc('text', usetex=True)
-#matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
-
-#element = 'Hf'
-#for pseudo in ['SG15','SG15-1.1']:
-##for pseudo in ['GBRV-1.2','031PAW','031US','100PAW','100US']: # 'GBRV-1.4','GBRV-1.5'
-#  name = '{}_{}_bands'.format(element,pseudo)
-#  dual = 4
-
-#  name_new = '{}_{}_{}_bands'.format(element,pseudo,dual)
-#  print name, name_new
-
-#  g=Group.get_from_string('{}'.format(name))
-#  l=list(g.nodes)
-#  gnew, _ =Group.get_or_create(name='{}'.format(name_new))
-#  gnew.add_nodes(l)
-#  g.remove_nodes(l)
-#  g.delete()
+matplotlib.rc('text', usetex=True)
+matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 
 ParameterData = DataFactory('parameter')
 UpfData = DataFactory('upf')
 
+'''
+Script to generate the png files with the pseudopotential equation of state for each element.
 
-user_email = 'gianluca.prandini@epfl.ch'
-user=User.search_for_users(email=user_email)[0]
+'''
+
+
+# Name of the AiiDA group to query from the SSSP data
 groups=Group.query(name__startswith='info_',name__endswith='_sssp1')
 groups=Group.query(name__startswith='La_',name__endswith='_sssp')
    
@@ -42,13 +29,12 @@ infos = ParameterData.query(dbgroups__pk__in=[_.pk for _ in groups])
 # Take all the elements in the groups 
 elements = set(infos.filter(dbattributes__key='element').values_list('dbattributes__tval',flat=True))
 # User-specified elements
-#elements = ['Fe']
 elements = ['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar',  
             'K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br',
             'Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te', 
             'I','Xe','Cs','Ba','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','Rn',
             'La','Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu']
-elements = ['La']
+#elements = ['La']
 
 warnings = []
   
@@ -58,19 +44,19 @@ for element in elements:
     print '*****************'
 
     pseudo_families = [
-                    #'pslib.0.3.1_PBE_US',
-                    #'pslib.0.3.1_PBE_PAW',
-                    #'pslib.1.0.0_PBE_US',
-                    #'pslib.1.0.0_PBE_PAW',
-                    #'pslib.1.0.0_PBE_US_low_acc',
-                    #'pslib.1.0.0_PBE_PAW_low_acc',
-                    #'GBRV_1.2',
-                    #'GBRV_1.4',
-                    #'GBRV_1.5',
-                    #'SG15',
-                    #'SG15_1.1',
-                    #'THEOS',
-                    #'Goedecker',
+                    'pslib.0.3.1_PBE_US',
+                    'pslib.0.3.1_PBE_PAW',
+                    'pslib.1.0.0_PBE_US',
+                    'pslib.1.0.0_PBE_PAW',
+                    'pslib.1.0.0_PBE_US_low_acc',
+                    'pslib.1.0.0_PBE_PAW_low_acc',
+                    'GBRV_1.2',
+                    'GBRV_1.4',
+                    'GBRV_1.5',
+                    'SG15',
+                    'SG15_1.1',
+                    'THEOS',
+                    'Goedecker',
 
 #                     'RE_Wentz',
 #                     'RE_Wentz_plus_nitrogen',
@@ -81,12 +67,12 @@ for element in elements:
 
     if element in rare_earths:
         pseudo_families = [
-                            #'RE_Wentz_plus_nitrogen',
-                            #'RE_pslib.1.0.0_PBE_US_plus_nitrogen',
-                            #'RE_pslib.1.0.0_PBE_PAW_plus_nitrogen',
+                            'RE_Wentz_plus_nitrogen',
+                            'RE_pslib.1.0.0_PBE_US_plus_nitrogen',
+                            'RE_pslib.1.0.0_PBE_PAW_plus_nitrogen',
                             #'RE_Vander_plus_nitrogen',
                             #'RE_GBRV_plus_nitrogen',
-                            'RE_SG15_plus_nitrogen'
+                            #'RE_SG15_plus_nitrogen'
                            ]
 
         

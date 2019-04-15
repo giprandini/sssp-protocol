@@ -3,13 +3,14 @@ This repository contains all the necessary workflows and tools in order to run t
 
 #### How to use
 
-Compile the Fortran77 subroutine for the Fermi energy with `efermi_f2py_make.sh` through f2py
+- Install AiiDA (version 0.7) following the instructions in the documentation (https://aiida-core.readthedocs.io/en/v0.7.0/) and the plugin for Quantum ESPRESSO.
+- Compile the Fortran77 subroutine for the Fermi energy with `efermi_f2py_make.sh` through f2py
 
 #### Acknowledgements
 
 If you use this software, please cite the following works:
 
-SSSP: G. Prandini, A. Marrazzo, I. E. Castelli, N. Mounet and N. Marzari, arXiv:1806.05609 [cond-mat.mtrl-sci] (2018). 
+SSSP: G. Prandini, A. Marrazzo, I. E. Castelli, N. Mounet and N. Marzari, npj Computational Materials 4, 72 (2018). 
 WEB: http://materialscloud.org/sssp.
 
 K. Lejaeghere et al., Science 351 (6280), 1415 (2016). 
