@@ -1105,4 +1105,82 @@ class SsspWorkflow(Workflow):
 
         self.append_to_report("Ending the SsspWorkflow.")        
         self.next(self.exit)
+                        
+                    
+                    
+                
 
+                
+##   OLD VERSION                
+#                 group_has_parameterdata = False
+#                 if created:
+#                     dbnodes = group.nodes.dbnodes
+#                     for dbnode in dbnodes:
+#                         node = load_node(dbnode.pk)                    
+#                         if  info_params.get_dict()['wfc_cutoff'] == node.get_dict()['wfc_cutoff'] and \
+#                             info_params.get_dict()['pseudo_md5'] == node.get_dict()['pseudo_md5'] and \
+#                             info_params.get_dict()['dual'] == node.get_dict()['dual']:
+#                             
+#                             # pseudo_family_names = UpfData.query(dbattributes__in=models.DbAttribute.objects.filter(key='md5',
+#                             #            tval=info_params.get_dict()['pseudo_md5'])).first().get_upf_family_names()
+#                             
+#                             # TODO: remove this if,else ! Special case if the group is called info_{}
+#                             if group_name.startswith('info_'):
+#                                 self.append_to_report("Final step: Group '{}' (pk = {}) already contains old "
+#                                                 "ParameterData (pk = {}) for ecut={} Ry, pseudo_family={} and dual={}. " 
+#                                                 "New (created) ParameterData (pk = {}) will be saved in the group while "
+#                                                 "the old one will NOT be deleted".format(group_name,group.pk,node.pk,
+#                                                 cutoff,pseudo_family,info_params.get_dict()['dual'],info_params.pk))
+#                                 group.add_nodes(info_params)
+#                                 group_has_parameterdata = True
+#                             else:
+#                                 # Replace ParameterData with the results in the group only if new sub-workflows 
+#                                 # were launched from the current sssp workflow.                           
+#                                 if len(launched_wfs) > 0:
+#                                     self.append_to_report("Final step: Group '{}' (pk = {}) already contains old "
+#                                                 "ParameterData (pk = {}) for ecut={} Ry, pseudo_family={} and dual={}. " 
+#                                                 "New (created) ParameterData (pk = {}) will be saved in the group while "
+#                                                 "the old one will be deleted".format(group_name,group.pk,node.pk,
+#                                                 cutoff,pseudo_family,info_params.get_dict()['dual'],info_params.pk))
+#                                     group.remove_nodes(node)
+#                                     group.add_nodes(info_params) 
+#                                 else:
+#                                     # TODO: maybe we should add the new ParameterData in the group anyway...
+#                                     self.append_to_report("Final step: WARNING: THIS SHOULD NOT HAPPEN! Group '{}' (pk = {}) already contains old "
+#                                                 "ParameterData (pk = {}) for ecut={} Ry. New (created) ParameterData (pk = {}) will not be saved "
+#                                                 "in the group".format(group_name,group.pk,node.pk,cutoff,info_params.pk))
+#                                 group_has_parameterdata = True
+#                                  
+#                     if not group_has_parameterdata:    
+#                         group.add_nodes(info_params)
+#                         self.append_to_report("Final step: New (created) ParameterData (pk = {}) for ecut={} Ry, "
+#                                   "pseudo_family={} and dual={} with info results is added in the group '{}' "
+#                                   "(pk = {})".format(info_params.pk,cutoff,pseudo_family,
+#                                                      info_params.get_dict()['dual'],group_name,group.pk) )
+#                 else:
+#                     self.append_to_report("Final step: ParameterData (pk = {}) for ecut={} Ry, pseudo_family={} "
+#                                 "and dual={} with the info results was "
+#                                 "already stored in the database!".format(info_params.pk,cutoff,pseudo_family,
+#                                                                          info_params.get_dict()['dual']))
+#                     dbnodes = group.nodes.dbnodes
+#                     for dbnode in dbnodes:
+#                         node = load_node(dbnode.pk)
+#                         if  info_params.get_dict()['wfc_cutoff'] == node.get_dict()['wfc_cutoff'] and \
+#                             info_params.get_dict()['pseudo_md5'] == node.get_dict()['pseudo_md5'] and \
+#                             info_params.get_dict()['dual'] == node.get_dict()['dual']:
+#                             if node.pk == info_params.pk:
+#                                 self.append_to_report("Final step: The ParameterData (pk = {}) for ecut={} Ry with "
+#                                                       "info results is already "
+#                                                       "in the group '{}' (pk = {})".format(node.pk, cutoff, group_name,group.pk))
+#                             else:
+#                                 self.append_to_report("Final step: WARNING: THIS SHOULD NOT HAPPEN! ParameterData (pk = {}) for ecut={} Ry from inline "
+#                                     "calculation is different from ParameterData (pk = {}) " 
+#                                     "in the group '{}' (pk = {}). I will add the new one but NOT delete the old one".format(info_params.pk, cutoff, node.pk, group_name, group.pk))
+#                                 group.add_nodes(info_params)
+#                             group_has_parameterdata = True       
+#                     if not group_has_parameterdata:
+#                         self.append_to_report("Final step: WARNING! ParameterData (pk = {}) for ecut={} Ry created in a previous workflow "
+#                                               "was not inside the group '{}' (pk = {}). "
+#                                               "I will add it".format(info_params.pk, cutoff, group_name,group.pk))  
+#                         group.add_nodes(info_params)
+                                    
