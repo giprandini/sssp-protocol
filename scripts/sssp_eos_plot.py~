@@ -14,15 +14,7 @@ ParameterData = DataFactory('parameter')
 UpfData = DataFactory('upf')
 
 '''
-Script to generate the png files with the equation of state for each element.
-
-It needs:
-
-- json files with SSSP pseudopotentials and cutoffs (precision and efficiency)
-
-- AiiDA groups with the info files produced by the SsspWorkflow
-
-- SingleDataFiles with the all-electron data for the delta-factor test
+Script to generate the png files with the pseudopotential equation of state for each element.
 
 '''
 

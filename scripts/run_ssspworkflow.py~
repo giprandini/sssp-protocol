@@ -22,7 +22,7 @@ Note: if you want to calculate the bands distance read before the doc of the inl
       'bands_distance_inline' in sssp_utils.
 '''
 
-from sssp_tools.sssp import SsspWorkflow
+from aiida.workflows.user.epfl_theos.quantumespresso.sssp import SsspWorkflow
 from aiida.common.example_helpers import test_and_get_code
 from aiida.orm import  DataFactory
 

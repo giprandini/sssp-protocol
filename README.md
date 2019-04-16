@@ -9,7 +9,6 @@ This repository contains all the necessary workflows and tools in order to run t
 #### Content
 
 scripts:
-
 - run_ssspworkflow.py                -->  input script to launch the full SsspWorkflow 
 - sssp_convergence_plot.py           -->  script to generate the SSSP convergence pattern plots from a previously run SsspWorkflow
 - sssp_eos_plot.py                   -->  script to generate the plots of the equations of states

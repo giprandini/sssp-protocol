@@ -1,14 +1,14 @@
 
 from aiida.orm.user import User
 from __builtin__ import True
-from aiida.workflows.user.epfl_theos.quantumespresso.sssp import SsspWorkflow
-from aiida.workflows.user.epfl_theos.quantumespresso import sssp_utils
+from sssp_tools.sssp import SsspWorkflow
+from sssp_tools import sssp_utils
 from aiida.workflows.user.epfl_theos.dbimporters.utils import objects_are_equal, objects_set
 from aiida.common.example_helpers import test_and_get_code
 import sys, subprocess, os, json
 from time import sleep
 from matplotlib.compat.subprocess import CalledProcessError
-from aiida.workflows.user.epfl_theos.quantumespresso.sssp_utils import pseudo_families_libraries_dict  as pseudo_dict
+from sssp_tools.sssp_utils import pseudo_families_libraries_dict  as pseudo_dict
 from matplotlib import pyplot as plt
 from matplotlib.patches import Ellipse
 import numpy as np

@@ -1,8 +1,8 @@
 import sys 
 from aiida.orm.user import User     
 from aiida.backends.djsite.db import models
-from aiida.workflows.user.epfl_theos.quantumespresso import sssp_utils
-from aiida.workflows.user.epfl_theos.quantumespresso.sssp_utils import pseudo_families_libraries_dict  as pseudo_dict
+from sssp_tools import sssp_utils
+from sssp_tools.sssp_utils import pseudo_families_libraries_dict  as pseudo_dict
 from matplotlib import pylab as plt
 import numpy as np
 import matplotlib
