@@ -13,7 +13,6 @@ __authors__ = "Nicolas Mounet, Gianluca Prandini, Antimo Marrazzo"
 UpfData = DataFactory('upf')
 ParameterData = DataFactory('parameter')
 
-# Add here the new pseudopotential library tested with the SSSP protocol
 pseudo_families_libraries_dict = {'pslib.0.3.1_PBE_US': '031US',
                                   'pslib.0.3.1_PBE_PAW': '031PAW',
                                   'pslib.1.0.0_PBE_US': '100US',
