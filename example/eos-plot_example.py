@@ -18,7 +18,6 @@ Script to generate the png files with the pseudopotential equation of state for 
 
 '''
 
-
 # Name of the AiiDA group to query from the SSSP data
 groups = Group.query(name='Pd_031PAW_8_sssp')
 infos = ParameterData.query(dbgroups__pk__in=[_.pk for _ in groups])

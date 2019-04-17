@@ -16,9 +16,6 @@ sys.argv[2] = pw codename
 sys.argv[3] = ph codename
 sys.argv[4] = pk of the SinglefileData of the 'Wien2k.txt' file from calcDelta package (version 3.1)
 
-sys.argv[5] = results_group_name: name of the group for storing the convergence tests results (OPTIONAL) 
-sys.argv[6] = bands_group_name: name of the group for storing the band structures results (OPTIONAL)
-
 '''
 
 from sssp_tools.sssp import SsspWorkflow

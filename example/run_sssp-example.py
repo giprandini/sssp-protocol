@@ -85,14 +85,6 @@ except IndexError:
 delta_structure = load_node(int(structure_pk))
 structure = load_node(int(structure_pk))
 
-valid_pseudo_groups = UpfData.get_upf_groups(filter_elements=element)
-try:
-    UpfData.get_upf_group(pseudo_family)
-except NotExistent:
-    print >> sys.stderr, "pseudo_family='{}',".format(pseudo_family)
-    print >> sys.stderr, "not found in the DB. Please create pseudo_family with this name."
-    sys.exit(1)
-
 try:
     pw_codename = sys.argv[2]
 except IndexError:
@@ -114,6 +106,14 @@ try:
     wien2k_EOS_pk = sys.argv[4]
 except IndexError:
     print >> sys.stderr, ("The fourth parameter must be the pk of the Wien2k SinglefileData")
+    sys.exit(1)
+
+valid_pseudo_groups = UpfData.get_upf_groups(filter_elements=element)
+try:
+    UpfData.get_upf_group(pseudo_family)
+except NotExistent:
+    print >> sys.stderr, "pseudo_family='{}',".format(pseudo_family)
+    print >> sys.stderr, "not found in the DB. Please create pseudo_family with this name."
     sys.exit(1)
 
 rare_earths = ['La','Ce','Pr','Nd','Pm','Sm','Eu','Gd','Tb','Dy','Ho','Er','Tm','Yb','Lu']

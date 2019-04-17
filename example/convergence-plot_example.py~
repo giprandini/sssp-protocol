@@ -25,7 +25,7 @@ matplotlib.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 
 
 '''
-Script to generate the png files with the SSSP convergence pattern plots for each element.
+Script to generate the png files with the SSSP convergence pattern plots for the test example (elemental palladium).
 
 It needs:
 
@@ -48,7 +48,6 @@ parser.add_argument("wien2k_pk", type=int, help="pk of the SinglefileData of the
 parser.add_argument("file_SSSP_efficiency", type=str, help="local path of json files with SSSP efficiency tables")
 parser.add_argument("file_SSSP_precision", type=str, help="local path of json files with SSSP precision tables")
 args = parser.parse_args()
-
 
 #### 
 reference_EOS_pk = args.wien2k_pk          

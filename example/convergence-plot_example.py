@@ -49,7 +49,6 @@ parser.add_argument("file_SSSP_efficiency", type=str, help="local path of json f
 parser.add_argument("file_SSSP_precision", type=str, help="local path of json files with SSSP precision tables")
 args = parser.parse_args()
 
-
 #### 
 reference_EOS_pk = args.wien2k_pk          
 # local path of json files with SSSP tables  (no $HOME in the path)
@@ -115,18 +114,7 @@ for element in elements:
     
     # AiiDA pseudo families
     pseudo_families = [
-#                    'pslib.0.3.1_PBE_US',
                     'pslib.0.3.1_PBE_PAW',
-#                    'pslib.1.0.0_PBE_US',
-#                    'pslib.1.0.0_PBE_PAW',
-#                    'GBRV_1.2',
-#                    'GBRV_1.4',
-#                    'GBRV_1.5',
-#                    'SG15',
-#                    'SG15_1.1',
-#                    'THEOS',
-#                    'Goedecker',
-#                    'Dojo'
                    ]
     
     

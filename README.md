@@ -3,8 +3,20 @@ This repository contains all the necessary workflows and tools in order to run t
 
 #### How to use
 
-- Install AiiDA (version 0.7) following the instructions in the documentation (https://aiida-core.readthedocs.io/en/v0.7.0/) and the plugin for Quantum ESPRESSO.
+- Install AiiDA (version 0.7) following the instructions in the documentation (https://aiida-core.readthedocs.io/en/v0.7.0/) and the plugin for Quantum ESPRESSO
 - Compile the Fortran77 subroutine for the Fermi energy with `efermi_f2py_make.sh` through f2py
+
+#### Test example
+
+We include a simple example to test the SsspWorkflow on elemental palladium and PAW pseudopotential from the PsLibrary 0.3.1. 
+In order to run the example you need to:
+
+- enter in the example directory and load the pseudopotential file 'Pd.pbe-n-kjpaw_psl.0.3.0.UPF' within an AiiDA pseudopotential family with name 'pslib.0.3.1_PBE_PAW'
+- download and insert in the current directory the file 'Wien2k.txt' from the calcDelta package (available at https://molmod.ugent.be/deltacodesdft) having the all-electron data for computing the DeltaFactor from the equation of state
+- run the AiiDA script 'load_aiida_data.py' to load and store in the database the necessary data for the example
+- run the AiiDA input script 'run_sssp-example.py' to launch the SsspWorkflow
+- when the SsspWorkflow is in FINISHED state, run the AiiDA scripts 'convergence-plot_example.py' to generate the SSSP convergence plot and 'eos-plot_example.py' to generate the plot of the equation of state
+
 
 #### Content
 

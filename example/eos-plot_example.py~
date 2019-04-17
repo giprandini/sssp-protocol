@@ -14,7 +14,7 @@ ParameterData = DataFactory('parameter')
 UpfData = DataFactory('upf')
 
 '''
-Script to generate the png files with the pseudopotential equation of state for the Pd test example.
+Script to generate the png files with the pseudopotential equation of state for the test example (elemental palladium).
 
 '''
 
