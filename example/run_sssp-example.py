@@ -15,6 +15,7 @@ sys.argv[1] = pk of the StructureData of the Pd crystal structure
 sys.argv[2] = pw codename
 sys.argv[3] = ph codename
 sys.argv[4] = pk of the SinglefileData of the 'Wien2k.txt' file from calcDelta package (version 3.1)
+sys.argv[5] = pk of the KpointsData used for the calculation of the band distance for band structure convergence
 
 '''
 
@@ -108,6 +109,12 @@ except IndexError:
     print >> sys.stderr, ("The fourth parameter must be the pk of the Wien2k SinglefileData")
     sys.exit(1)
 
+try:
+    band_kpoints_pk = sys.argv[5]
+except IndexError:
+    print >> sys.stderr, ("The fifth parameter must be the pk of the KpointsData used for band structure convergence")
+    sys.exit(1)
+
 valid_pseudo_groups = UpfData.get_upf_groups(filter_elements=element)
 try:
     UpfData.get_upf_group(pseudo_family)
@@ -154,7 +161,7 @@ stress_degauss = 0.02
 bands_degauss = 0.02
 bands_scf_kpoints_mesh = [20,20,20] 
 number_of_bands_nelec_units = 2.0  # number_of_bands = (number_of_electrons)*(number_of_bands_nelec_units)
-bands_kpoints_mesh = [6,6,6] # 6x6x6 with no-offset 
+bands_kpoints = = load_node(int(band_kpoints_pk)) # 6x6x6 with no-offset 
 
 # phonon parameters 
 phonon_degauss = 0.02  # Rydberg
@@ -207,7 +214,7 @@ wf_parameters = {
                  # Inputs specific to the delta computation
                  'delta_structure': delta_structure,
                  'delta_parameters': {
-                                      'reference_EOS_pk': wien2k_EOS_pk,
+                                      'reference_EOS_pk': int(wien2k_EOS_pk),
                                       'kpoints_mesh': delta_kpoints_mesh,           
                                       },
                  'delta_pw_parameters': {
@@ -373,7 +380,7 @@ wf_parameters = {
                  #'bands_pw_kpoints' : user-defined KpointsData() node. It has the priority w.r.t. the kpoints_mesh. 
                  #'bands_pw_settings': {},
                  'bands_pw_calculation_set': calculation_set_dict,
-                 #'bands_pw_band_settings': {},
+                 #'bands_pw_band_settings': {}, 
                  'bands_pw_band_calculation_set': calculation_set_dict,
                  
                  # Inputs specific to the phonon computation

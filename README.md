@@ -21,7 +21,7 @@ In order to run the example you need to:
 #### Content
 
 scripts:
-- run_ssspworkflow.py                -->  input script to launch the full SsspWorkflow 
+- run_ssspworkflow.py                -->  example of input script used to launch the full SsspWorkflow 
 - sssp_convergence_plot.py           -->  script to generate the SSSP convergence pattern plots from a previously run SsspWorkflow
 - sssp_eos_plot.py                   -->  script to generate the plots of the equations of states
 

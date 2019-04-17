@@ -9,6 +9,7 @@ from aiida.common.exceptions import UniquenessError
 from aiida.orm.data.singlefile import SinglefileData
 
 UpfData = DataFactory('upf')
+KpointsData = DataFactory('array.kpoints')
 
 mypath = os.getcwd()
 files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
@@ -16,13 +17,11 @@ files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 if 'Pd.cif' not in files or 'Pd_isolated-atom.cif' not in files or 'Wien2k.txt' not in files:
     raise Exception("Files are missing in the current directory! You need to have: 'Pd.cif', 'Pd_isolated-atom.cif' and 'Wien2k.txt' (to be taken from calcDelta package)")
 
-
 # Store structure of elemental Pd
 atoms = read('{}/Pd.cif'.format(mypath))
 structure = StructureData(ase=atoms)
 n = structure.store()
-
-print 'StructureData of elemental Pd obtained from Pd.cif has pk = {}'.format(str(n.pk))
+print 'StructureData of elemental Pd obtained from Pd.cif has pk = {}\n'.format(str(n.pk))
 
 # Add structure of Pd atom in AiiDA group
 g = Group.get_or_create(name='Isolated_atoms')
@@ -30,16 +29,19 @@ atoms = read('{}/Pd_isolated-atom.cif'.format(mypath))
 structure = StructureData(ase=atoms)
 n = structure.store()
 g.add_nodes(n)
+print "Added structure (pk = {}) obtained from Pd_isolated-atom.cif to AiiDA group 'Isolated_atoms'\n".format(n.pk)
 
-print "Added structure (pk = {}) obtained from Pd_isolated-atom.cif to AiiDA group 'Isolated_atoms'".format(n.pk)
-
-
-# Add SinglefileData with Wien2k results for the equations of states
+# Store SinglefileData with Wien2k results for the equations of states
 f = SinglefileData()
 f.set_file('{}/Wien2k.txt'.format(mypath))
 f.store()
+print 'SinglefileData obtained from text file Wien2k.txt has pk = {}\n'.format(str(f.pk))
 
-print 'SinglefileData obtained from text file Wien2k.txt has pk = {}'.format(str(f.pk))
+# Store KpointsData for band structure
+k = KpointsData()
+k.set_kpoints_mesh([6, 6, 6], [0.0, 0.0, 0.0])
+k.store()
+print 'KpointsData for band structure has pk = {}\n'.format(str(k.pk))
 
 
 
