@@ -1,5 +1,4 @@
 
-
 import os, sys
 from os import listdir
 from os.path import isfile, join
@@ -10,6 +9,10 @@ from aiida.orm.data.singlefile import SinglefileData
 
 UpfData = DataFactory('upf')
 KpointsData = DataFactory('array.kpoints')
+
+'''
+Launch this script to load and store in the AiiDA database the necessary data
+'''
 
 mypath = os.getcwd()
 files = [f for f in listdir(mypath) if isfile(join(mypath, f))]
