@@ -36,9 +36,9 @@ print "Added structure (pk = {}) obtained from Pd_isolated-atom.cif to AiiDA gro
 
 # Store SinglefileData with Wien2k results for the equations of states
 f = SinglefileData()
-f.set_file('{}/WIEN2k.txt'.format(mypath))
+f.set_file('{}/Wien2k.txt'.format(mypath))
 f.store()
-print 'SinglefileData obtained from text file WIEN2k.txt has pk = {}\n'.format(str(f.pk))
+print 'SinglefileData obtained from text file Wien2k.txt has pk = {}\n'.format(str(f.pk))
 
 # Store KpointsData for band structure
 k = KpointsData()
