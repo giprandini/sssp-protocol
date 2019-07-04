@@ -114,7 +114,18 @@ for element in elements:
     
     # AiiDA pseudo families
     pseudo_families = [
+#                    'pslib.0.3.1_PBE_US',
                     'pslib.0.3.1_PBE_PAW',
+#                    'pslib.1.0.0_PBE_US',
+#                    'pslib.1.0.0_PBE_PAW',
+#                    'GBRV_1.2',
+#                    'GBRV_1.4',
+#                    'GBRV_1.5',
+#                    'SG15',
+#                    'SG15_1.1',
+#                    'THEOS',
+#                    'Goedecker',
+#                    'Dojo'
                    ]
     
     
