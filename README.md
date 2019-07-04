@@ -1,12 +1,24 @@
 # sssp-protocol
 This repository contains all the necessary workflows and tools in order to run the SSSP (standard solid state pseudopotential) protocol for testing pseudopotentials.
 
-#### How to use
+#### Prerequisites
 
-- Install AiiDA (version 0.7) following the instructions in the documentation (https://aiida-core.readthedocs.io/en/v0.7.0/) and the plugin for Quantum ESPRESSO
+ * python 2.7
+ * fortran compiler
+ * Quantum Espresso 
+ * aiida-core v0.7 (see [documentation](https://aiida-core.readthedocs.io/en/v0.7.0/) for instructions)
+ * aiida-quantumespresso 
+
+#### Installation
+
+```
+git clone https://github.com/giprandini/sssp-protocol
+pip install sssp-protocol
+```
+
 - Compile the Fortran77 subroutine for the Fermi energy with `efermi_f2py_make.sh` through f2py
 
-#### Test example
+#### Usage example
 
 We include a simple example to test the SsspWorkflow on elemental palladium and PAW pseudopotential from the PsLibrary 0.3.1. 
 In order to run the example you need to:

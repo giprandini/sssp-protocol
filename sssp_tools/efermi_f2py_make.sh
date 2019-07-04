@@ -1,2 +1,2 @@
 #!/bin/bash
-f2py -c efermy.pyf efermi.f
+f2py -c efermi.pyf efermi.f
