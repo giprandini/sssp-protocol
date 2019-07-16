@@ -9,7 +9,10 @@ pseudopotentials.
  * fortran compiler
  * Quantum Espresso 5.4-6.2
  * aiida-core v0.7.0 (see [documentation](https://aiida-core.readthedocs.io/en/v0.7.0/) for instructions)
+   - Copy `aiida.patch` to `aiida-core` directory and apply: `patch -p1 < aiida.patch`
+   - Copy `sssp_tools/sssp.py` to `aiida/workflows`
  * aiida-quantumespresso 
+   - Use `verdi code setup` in order to set up an AiiDA code for Quantum Espresso 
 
 #### Installation
 
@@ -19,8 +22,6 @@ pip install sssp-protocol
 ```
  
 - Compile the Fortran77 subroutine for the Fermi energy with `efermi_f2py_make.sh` through f2py
-- Use `verdi code setup` in order to set up an AiiDA code for Quantum Espresso 
-- Copy `sssp_tools/sssp.py` to `aiida/workflows`
 
 #### Usage example
 
