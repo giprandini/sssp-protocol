@@ -24,7 +24,6 @@ pip install sssp-protocol
 #### Usage example
 
 This demonstrates how to run the SsspWorkflow on elemental palladium for a PAW pseudopotential from the PsLibrary 0.3.1.
-pseudopotential from the PsLibrary 0.3.1. 
 
 - Create a pseudopotential family from the palladium pseudopotential:
   ```
@@ -44,9 +43,7 @@ pseudopotential from the PsLibrary 0.3.1.
   * `sssp_convergence_plot.py`: plot the convergence pattern from a previously run SsspWorkflow
   * `sssp_eos_plot.py`: plot the equations of state
 
-Note: In order to compute the Delta Factor from the equation of state, this
-example uses the all-electron data inside 'WIEN2k.txt' taken from the calcDelta
-package v3.1 available at https://molmod.ugent.be/deltacodesdft.
+Note: In order to compute the Delta Factor from the equation of state, this example uses the all-electron data inside 'WIEN2k.txt' taken from the calcDelta package v3.1 available at https://molmod.ugent.be/deltacodesdft.
 
 #### Acknowledgements
 
