@@ -23,7 +23,7 @@ pip install sssp-protocol
 
 #### Usage example
 
-This demonstrates how to run the SsspWorkflow on elemental palladium for a PAW
+This demonstrates how to run the SsspWorkflow on elemental palladium for a PAW pseudopotential from the PsLibrary 0.3.1.
 pseudopotential from the PsLibrary 0.3.1. 
 
 - Create a pseudopotential family from the palladium pseudopotential:
