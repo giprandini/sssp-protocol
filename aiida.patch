@@ -1,0 +1,18 @@
+diff --git a/aiida/optional.py b/aiida/optional.py
+index e2bc4f672..0f625549e 100644
+--- a/aiida/optional.py
++++ b/aiida/optional.py
+@@ -7,7 +7,12 @@ __license__ = "MIT license, see LICENSE.txt file."
+ __authors__ = "The AiiDA team."
+ __version__ = "0.7.0.1"
+ 
+-installed_packages = [p.project_name for p in pip.get_installed_distributions()]
++try:
++    from pip._internal.utils.misc import get_installed_distributions
++except ImportError:  # pip<10
++    from pip import get_installed_distributions
++
++installed_packages = [p.project_name for p in get_installed_distributions()]
+ 
+ 
+ KOMBU_FOUND = 'kombu' in installed_packages
